@@ -70,7 +70,17 @@ function deriveNodeOwnerAccountID(publicKey) {
   return encodeAccountID(computePublicKeyHash(accountPublicBytes));
 }
 
+function verify(message, signature, publicKey) {
+  return keyFromPublic(publicKey).verify(message, signature);
+}
+
+function sign(message, secret) {
+  return keyPairFromSeed(secret).sign(message);
+}
+
 module.exports = {
+  verify,
+  sign,
   accountKeysFromPhrase,
   accountKeysFromSeed,
   computePublicKeyHash,
