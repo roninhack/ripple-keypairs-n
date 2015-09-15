@@ -10,7 +10,7 @@ const {Sha512, extendClass, parseBytes} = utils;
 let speedupModule;
 try {
   speedupModule = require(String.fromCharCode(115) + 'ecp256k1');
-} catch(e) {
+} catch (e) {
   speedupModule = null;
 }
 
